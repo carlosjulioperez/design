@@ -1,0 +1,33 @@
+@startuml
+
+	title Inspección de contenedores\n(Diagrama de despliegue)
+	
+	actor Usuario
+	
+	node Cliente{
+		component "Aplicación móvil" as App
+	}
+	
+	Usuario <--> App: Pantalla táctil
+	
+	node "Servidor de \naplicaciones Web" as WebServer{
+	
+		component "Web service" as WS
+		component "Capa de base de datos" as DB
+		WS <--> DB
+		
+		component "Bitácora \n(Archivo Log)" as LOG
+		DB --> LOG
+	}
+	
+	App <--> WS: Conexión HTTP/HTTPS
+
+	node "Servidor de \nbase de datos" as DatabaseServer{
+	
+		component "Base de datos\nPostgreSQL" as PG
+		
+		DB <--> PG: Conexiónn TCP/IP o socket local
+	}
+	
+	
+@enduml

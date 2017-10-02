@@ -1,50 +1,52 @@
 @startuml
 
-class Usuario{
-}
+	title Inspección de contenedores\n(Diagrama de clases)
+	
+	class Usuario{
+	}
 
-class Inspector{
-}
+	class Inspector{
+	}
 
-class Inspeccion{
-}
+	class Inspeccion{
+	}
 
-class DatosContenedor{
-}
+	class DatosContenedor{
+	}
 
-class Producto{
-	marca
-	descripcion
-	tipoProducto
-	presentacion
-	empaque
-}
+	class Producto{
+		marca
+		descripcion
+		tipoProducto
+		presentacion
+		empaque
+	}
 
-class Clasificacion{
-	id
-	modelo
-}
+	class Clasificacion{
+		id
+		modelo
+	}
 
-class ControlEmbarque{
-}
+	class ControlEmbarque{
+	}
 
-class DetalleCajas{
-	id
-	fila
-	cantidad
-	obtenerTotalCajas()
-}
+	class DetalleCajas{
+		id
+		fila
+		cantidad
+		obtenerTotalCajas()
+	}
 
-Usuario <|-- Inspector
+	Usuario <|-- Inspector
 
-'Relaciones
-Inspector "1" -right- "*" Inspeccion
-Inspeccion "1" -right- "1" DatosContenedor
-DatosContenedor "1" *-down- "*" Producto
-Producto "1" *-down- "*" Clasificacion
-DatosContenedor "1" -right- "1" ControlEmbarque
-Clasificacion "1" *-right- "*" DetalleCajas
+	'Relaciones
+	Inspector "1" -right- "*" Inspeccion
+	Inspeccion "1" -right- "1" DatosContenedor
+	DatosContenedor "1" *-down- "*" Producto
+	Producto "1" *-down- "*" Clasificacion
+	DatosContenedor "1" -right- "1" ControlEmbarque
+	Clasificacion "1" *-right- "*" DetalleCajas
 
-'ControlEmbarque .down.> DetalleCajas
+	'ControlEmbarque .down.> DetalleCajas
 
 @enduml

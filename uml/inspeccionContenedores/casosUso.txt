@@ -1,22 +1,23 @@
 @startuml
-'left to right direction
-'top to bottom direction
-
-skinparam packageStyle rectangle
-
-actor Inspector
-
-rectangle "Inspección de contenedores" {
-	(Inspección de contenedores) as (Inspeccion)
-	(Datos del contenedor) as (Datos)
-	(Control de embarque granel) as (Control)
-
-	Inspector -right- (Inspeccion)
-	Inspector -- (Datos)
-	Inspector -- (Control)
 	
-	(Datos) -up.> (Inspeccion): <<Include>>
-	(Control) -up.> (Datos): <<Include>>
-}
+	'left to right direction
+	'top to bottom direction
+
+	skinparam packageStyle rectangle
+
+	actor Inspector
+
+	rectangle "Inspección de contenedores\n(Caso de Uso)" {
+		(Inspección de contenedores) as (Inspeccion)
+		(Datos del contenedor) as (Datos)
+		(Control de embarque granel) as (Control)
+
+		Inspector -right- (Inspeccion)
+		Inspector -- (Datos)
+		Inspector -- (Control)
+		
+		(Datos) -up.> (Inspeccion): <<Include>>
+		(Control) -up.> (Datos): <<Include>>
+	}
 
 @enduml
