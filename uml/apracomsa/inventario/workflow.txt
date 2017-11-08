@@ -1,0 +1,15 @@
+@startuml
+
+|Ventas|
+start
+:Requerimiento de producto;
+|Gerencia o Compras|
+if (¿Aprueba Requerimiento?) then (Sí)
+	:Generar Orden de Compra;
+else (No)
+	|Ventas|
+	:Requerimiento de producto;
+endif
+	
+stop
+@enduml
