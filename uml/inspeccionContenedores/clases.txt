@@ -16,10 +16,10 @@
 
 	class Producto{
 		marca
-		descripcion
-		tipoProducto
+		descripcionPesos
 		presentacion
 		empaque
+		tipoProducto
 	}
 
 	class Clasificacion{
@@ -42,7 +42,7 @@
 	'Relaciones
 	Inspector "1" -right- "*" Inspeccion
 	Inspeccion "1" -right- "1" DatosContenedor
-	DatosContenedor "1" *-down- "*" Producto
+	ControlEmbarque "1" *-down- "*" Producto
 	Producto "1" *-down- "*" Clasificacion
 	DatosContenedor "1" -right- "1" ControlEmbarque
 	Clasificacion "1" *-right- "*" DetalleCajas
