@@ -9,15 +9,15 @@
 
 	rectangle "Inspección de contenedores\n(Caso de Uso)" {
 		(Inspección de contenedores) as (Inspeccion)
-		(Datos del contenedor) as (Datos)
 		(Control de embarque granel) as (Control)
+		(Datos del contenedor) as (Datos)
 
 		Inspector -right- (Inspeccion)
-		Inspector -- (Datos)
 		Inspector -- (Control)
+		Inspector -- (Datos)
 		
-		(Datos) -up.> (Inspeccion): <<Include>>
-		(Control) -up.> (Datos): <<Include>>
+		(Control) -up.> (Inspeccion): <<Include>>
+		(Datos) -up.> (Control): <<Include>>
 	}
 
 @enduml

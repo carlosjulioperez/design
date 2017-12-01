@@ -41,10 +41,10 @@
 
 	'Relaciones
 	Inspector "1" -right- "*" Inspeccion
-	Inspeccion "1" -right- "1" DatosContenedor
+	Inspeccion "1" -right- "1" ControlEmbarque 
 	ControlEmbarque "1" *-down- "*" Producto
 	Producto "1" *-down- "*" Clasificacion
-	DatosContenedor "1" -right- "1" ControlEmbarque
+	ControlEmbarque "1" -right- "1" DatosContenedor 
 	Clasificacion "1" *-right- "*" DetalleCajas
 
 	'ControlEmbarque .down.> DetalleCajas
