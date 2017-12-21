@@ -1,0 +1,27 @@
+@startuml
+|Inspector|
+start
+:Ingresar datos Inspección;
+|Sistema|
+:Grabar Inspección;
+|Inspector|
+:Buscar por Id o cliente<
+|Sistema|
+:Buscar Inspección;
+|Inspector|
+:Mostrar Inspección>
+:Ingresar Control Embarque;
+|Sistema|
+:Grabar Control Embarque;
+|Inspector|
+:Buscar por Id o cliente<
+|Sistema|
+:Buscar Control Embarque;
+|Inspector|
+:Mostrar Control Embarque>
+:Ingresar Datos Contenedor;
+|Sistema|
+:Grabar Datos Contenedor;
+stop
+@enduml
+
